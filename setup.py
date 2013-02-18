@@ -9,7 +9,7 @@ setup(
     description="Generate random names",
     license="LICENSE.txt",
     packages=find_packages(),
-    package_data={'': ['dist.*']},
+    package_data={'names': ['dist.*']},
     include_package_data=True,
     entry_points={
         'console_scripts': [
