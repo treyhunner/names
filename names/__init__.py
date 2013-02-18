@@ -35,5 +35,9 @@ def get_full_name(gender=None):
     return u"%s %s" % (get_first_name(gender), get_last_name())
 
 
-if __name__ == "__main__":
+def main():
     print get_full_name()
+
+
+if __name__ == "__main__":
+    main()
