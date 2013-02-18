@@ -15,10 +15,34 @@ The script is `available on PyPI`_.  To install with pip::
 Usage
 -----
 
-To use the script from the command line::
+Names can be used as a command line utility or imported as a Python package.
+
+Command Line Usage
+~~~~~~~~~~~~~~~~~~
+To use the script from the command line:
+
+.. code-block:: bash
 
     $ names
     John Powell
+
+Python Package Usage
+~~~~~~~~~~~~~~~~~~~~
+Here are examples of all current features:
+
+.. code-block:: pycon
+
+    >>> import names
+    >>> names.get_full_name()
+    u'Patricia Halford'
+    >>> names.get_full_name(gender='male')
+    u'Patrick Keating'
+    >>> names.get_first_name()
+    'Bernard'
+    >>> names.get_first_name(gender='female')
+    'Christina'
+    >>> names.get_last_name()
+    'Szczepanek'
 
 
 License
