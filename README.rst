@@ -4,14 +4,6 @@ names
 Random name generator
 
 
-Installation
-------------
-
-The script is `available on PyPI`_.  To install with pip::
-
-    sudo pip install names
-
-
 Usage
 -----
 
@@ -43,6 +35,14 @@ Here are examples of all current features:
     'Christina'
     >>> names.get_last_name()
     'Szczepanek'
+
+
+Installation
+------------
+
+The script is `available on PyPI`_.  To install with pip::
+
+    sudo pip install names
 
 
 License
