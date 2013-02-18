@@ -7,7 +7,7 @@ Random name generator
 Installation
 ------------
 
-The script is `available on PyPI`_.  To install with pip:
+The script is `available on PyPI`_.  To install with pip::
 
     sudo pip install names
 
@@ -15,7 +15,7 @@ The script is `available on PyPI`_.  To install with pip:
 Usage
 -----
 
-To use the script from the command line:
+To use the script from the command line::
 
     $ names
     John Powell
