@@ -2,6 +2,12 @@ from os.path import abspath, join, dirname
 import random
 
 
+__title__ = 'names'
+__version__ = '0.2'
+__author__ = 'Trey Hunner'
+__license__ = 'MIT'
+
+
 full_path = lambda filename: abspath(join(dirname(__file__), filename))
 
 
