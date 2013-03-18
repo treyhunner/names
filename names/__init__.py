@@ -38,4 +38,4 @@ def get_last_name():
 
 
 def get_full_name(gender=None):
-    return u"%s %s" % (get_first_name(gender), get_last_name())
+    return unicode("%s %s").format(get_first_name(gender), get_last_name())
