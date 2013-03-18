@@ -1,6 +1,9 @@
 names
 =====
 
+.. image:: https://secure.travis-ci.org/names/names.png
+   :target: http://travis-ci.org/names/names
+
 Random name generator
 
 
