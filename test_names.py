@@ -7,10 +7,6 @@ import names
 
 full_path = lambda filename: abspath(join(dirname(__file__), filename))
 
-FILES = {
-    'test1': full_path('test/file1.txt'),
-}
-
 
 class patch_file:
 
@@ -28,16 +24,17 @@ class patch_file:
 class NamesTest(TestCase):
 
     test_files = {
-        'first:male': 'test/male.txt',
-        'first:female': 'test/female.txt',
-        'last': 'test/last.txt',
+        'first:male': full_path('test/male.txt'),
+        'first:female': full_path('test/female.txt'),
+        'last': full_path('test/last.txt'),
     }
 
     def test_get_name(self):
         counts = defaultdict(int)
         rounds = 5000.0
+        test_file = full_path('test/file1.txt')
         for i in range(1, int(rounds)):
-            counts[names.get_name(FILES['test1'])] += 1
+            counts[names.get_name(test_file)] += 1
         self.assertAlmostEqual(counts['Test1'] / rounds, 0.333, delta=0.05)
         self.assertAlmostEqual(counts['Test2'] / rounds, 0.277, delta=0.05)
         self.assertAlmostEqual(counts['Test3'] / rounds, 0.222, delta=0.05)
