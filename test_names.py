@@ -27,6 +27,12 @@ class patch_file:
 
 class NamesTest(TestCase):
 
+    test_files = {
+        'first:male': 'test/male.txt',
+        'first:female': 'test/female.txt',
+        'last': 'test/last.txt',
+    }
+
     def test_get_name(self):
         counts = defaultdict(int)
         rounds = 5000.0
@@ -41,13 +47,18 @@ class NamesTest(TestCase):
     def test_random_gender(self):
         counts = defaultdict(int)
         rounds = 5000.0
-        with patch_file({'first:male': 'test/male.txt',
-                         'first:female': 'test/female.txt'}):
+        with patch_file(self.test_files):
             for i in range(int(rounds)):
                 names.get_first_name()
                 counts[names.get_first_name()] += 1
         self.assertAlmostEquals(counts['Male'] / rounds, 0.500, delta=0.05)
         self.assertAlmostEquals(counts['Female'] / rounds, 0.500, delta=0.05)
+
+    def test_correct_files(self):
+        with patch_file(self.test_files):
+            self.assertEqual(names.get_first_name(gender='male'), "Male")
+            self.assertEqual(names.get_first_name(gender='female'), "Female")
+            self.assertEqual(names.get_last_name(), "Last")
 
 
 if __name__ == '__main__':
