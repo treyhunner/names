@@ -18,4 +18,5 @@ setup(
             'names = names.main:main',
         ],
     },
+    test_suite='test_names',
 )

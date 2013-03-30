@@ -3,6 +3,8 @@ names
 
 .. image:: https://secure.travis-ci.org/treyhunner/names.png
    :target: http://travis-ci.org/treyhunner/names
+.. image:: https://coveralls.io/repos/treyhunner/names/badge.png?branch=master
+   :target: https://coveralls.io/r/treyhunner/names
 
 Random name generator
 
