@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from os.path import abspath, join, dirname
 import random
 
@@ -38,4 +39,4 @@ def get_last_name():
 
 
 def get_full_name(gender=None):
-    return unicode("%s %s").format(get_first_name(gender), get_last_name())
+    return "{0} {1}".format(get_first_name(gender), get_last_name())
