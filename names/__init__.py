@@ -26,6 +26,7 @@ def get_name(filename):
             name, _, cummulative, _ = line.split()
             if float(cummulative) > selected:
                 return name
+    return ""  # Return empty string if file is empty
 
 
 def get_first_name(gender=None):

@@ -77,6 +77,17 @@ class NamesTest(unittest.TestCase):
             self.assertEqual(names.get_first_name(gender='female'), "Female")
             self.assertEqual(names.get_last_name(), "Last")
 
+    def test_empty_file(self):
+        empty_files = {
+            'first:male': full_path('test/empty.txt'),
+            'first:female': full_path('test/empty.txt'),
+            'last': full_path('test/empty.txt'),
+        }
+        with patch_file(empty_files):
+            self.assertEqual(names.get_first_name(gender='male'), "")
+            self.assertEqual(names.get_first_name(gender='female'), "")
+            self.assertEqual(names.get_last_name(), "")
+
 
 class CommandLineTest(unittest.TestCase):
 
