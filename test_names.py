@@ -68,8 +68,8 @@ class NamesTest(unittest.TestCase):
             for i in range(int(rounds)):
                 names.get_first_name()
                 counts[names.get_first_name()] += 1
-        self.assertAlmostEquals(counts['Male'] / rounds, 0.500, delta=0.05)
-        self.assertAlmostEquals(counts['Female'] / rounds, 0.500, delta=0.05)
+        self.assertAlmostEqual(counts['Male'] / rounds, 0.500, delta=0.05)
+        self.assertAlmostEqual(counts['Female'] / rounds, 0.500, delta=0.05)
 
     def test_correct_files(self):
         with patch_file(test_files):
