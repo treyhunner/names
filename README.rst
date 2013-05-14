@@ -1,7 +1,7 @@
 names
 =====
 
-.. image:: https://secure.travis-ci.org/treyhunner/names.png
+.. image:: https://secure.travis-ci.org/treyhunner/names.png?branch=master
    :target: http://travis-ci.org/treyhunner/names
 .. image:: https://coveralls.io/repos/treyhunner/names/badge.png?branch=master
    :target: https://coveralls.io/r/treyhunner/names
