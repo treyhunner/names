@@ -1,1 +1,2 @@
+include *.rst
 include names/dist.all.last names/dist.female.first names/dist.male.first
