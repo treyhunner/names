@@ -8,7 +8,10 @@ setup(
     author=names.__author__,
     url="https://github.com/treyhunner/names",
     description="Generate random names",
-    long_description=open('README.rst').read(),
+    long_description='\n\n'.join((
+        open('README.rst').read(),
+        open('CHANGES.rst').read(),
+    )),
     license=names.__license__,
     packages=find_packages(),
     package_data={'names': ['dist.*']},
