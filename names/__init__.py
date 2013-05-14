@@ -4,7 +4,7 @@ import random
 
 
 __title__ = 'names'
-__version__ = '0.2'
+__version__ = '0.2.0.post1'
 __author__ = 'Trey Hunner'
 __license__ = 'MIT'
 
