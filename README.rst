@@ -5,6 +5,10 @@ names
    :target: http://travis-ci.org/treyhunner/names
 .. image:: https://coveralls.io/repos/treyhunner/names/badge.png?branch=master
    :target: https://coveralls.io/r/treyhunner/names
+.. image:: https://pypip.in/v/names/badge.png
+   :target: https://crate.io/packages/names
+.. image:: https://pypip.in/d/names/badge.png
+   :target: https://crate.io/packages/names
 
 Random name generator
 
