@@ -8,7 +8,7 @@ with open('README.rst') as readme_file:
 with open('CHANGES.rst') as changes_file:
     changes = changes_file.read()
 
-with open('CONTRIBUTING.rst') as contributing_fie:
+with open('CONTRIBUTING.rst') as contributing_file:
     contributing = contributing_file.read()
 
 
