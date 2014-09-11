@@ -14,6 +14,21 @@ tests continue to function.
 
 Please include new tests with your pull requests when appropriate.
 
+Feel free to open pull requests before you've finished your code or tests.
+Opening your pull request sooner will allow others to comment on it sooner.
+
+A checklist of things to remember when making a feature:
+
+- Write tests if applicable
+- Note important changes in the `CHANGES`_ file
+- Update the `README`_ file if needed
+- Update the documentation if needed
+- Add yourself to the `AUTHORS`_ file
+
+.. _AUTHORS: AUTHORS.rst
+.. _CHANGES: CHANGES.rst
+.. _README: README.rst
+
 Running the tests
 ~~~~~~~~~~~~~~~~~
 
