@@ -30,8 +30,10 @@ def get_name(filename):
 
 
 def get_first_name(gender=None):
-    if gender not in ('male', 'female'):
+    if gender is None:
         gender = random.choice(('male', 'female'))
+    if gender not in ('male', 'female'):
+        raise ValueError("Only 'male' and 'female' are supported as gender")
     return get_name(FILES['first:%s' % gender]).capitalize()
 
 
