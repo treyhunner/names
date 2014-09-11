@@ -87,6 +87,10 @@ class NamesTest(unittest.TestCase):
             self.assertEqual(names.get_first_name(gender='male'), "")
             self.assertEqual(names.get_first_name(gender='female'), "")
             self.assertEqual(names.get_last_name(), "")
+    
+    def test_only_male_and_female_gender_are_supported(self):
+        with self.assertRaises(ValueError):
+            names.get_first_name(gender='other')
 
 
 class CommandLineTest(unittest.TestCase):
