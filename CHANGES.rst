@@ -4,6 +4,8 @@ Changes
 tip (unreleased)
 ----------------
 
+- Modified names.get_first_name to only accept 'male' and 'female' gender values
+
 0.3.0 (2013-05-14)
 ------------------
 
