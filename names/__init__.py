@@ -28,7 +28,6 @@ FILES = {
 
 def get_name(filename):
     if 'cache' in filename and len(filename['cache']) > 0:
-        random.seed()
         selected = random.randint(0, len(filename['cache']) - 1)
         return filename['cache'][selected]
     else:
@@ -70,6 +69,6 @@ def get_full_names(gender=None, count=1):
     for f in FILES.values():
         cache_file(f)
 
+    random.seed()
     pool = Pool(cpu_count())
     return list(pool.imap(get_full_name, [gender] * count))
-
