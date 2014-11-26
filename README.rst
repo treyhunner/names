@@ -53,6 +53,8 @@ Here are examples of all current features:
     >>> names.get_last_name()
     'Szczepanek'
 
+Optionally, you can pass cached=True to any of these functions which caches the name list
+and is recommended if you are generating many names.
 
 License
 -------
