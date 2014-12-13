@@ -18,7 +18,7 @@ Installation
 
 The script is `available on PyPI`_.  To install with pip::
 
-    sudo pip install names
+    pip install names
 
 
 Usage
