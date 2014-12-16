@@ -10,7 +10,7 @@ names
 .. image:: https://pypip.in/d/names/badge.png
    :target: https://crate.io/packages/names
 
-Random name generator
+Random name/email generator
 
 
 Installation
@@ -52,6 +52,10 @@ Here are examples of all current features:
     'Christina'
     >>> names.get_last_name()
     'Szczepanek'
+    >>> names.get_email(get_full_name())
+    'patriciahalford@namelesscomp.foo'
+    >>> names.get_email(get_first_name())
+    'bernard@berny.bar'
 
 
 License
@@ -64,6 +68,11 @@ Data in the following files are public domain (derived from 1990 Census data):
 - dist.all.last
 - dist.female.first
 - dist.male.first
+
+Data in the following files are public domain
+
+- dist.companies
+- dist.tlds
 
 .. _mit license: http://th.mit-license.org/2013
 .. _available on PyPI: http://pypi.python.org/pypi/names/
