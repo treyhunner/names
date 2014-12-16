@@ -41,9 +41,9 @@ class patch_file:
         names.FILES = self.old_files
 
 test_files = {
-    'first:male': full_path('test/male.txt'),
-    'first:female': full_path('test/female.txt'),
-    'last': full_path('test/last.txt'),
+    'first:male': {'path': full_path('test/male.txt')},
+    'first:female': {'path': full_path('test/female.txt')},
+    'last': {'path': full_path('test/last.txt')}
 }
 
 
@@ -52,7 +52,7 @@ class NamesTest(unittest.TestCase):
     def test_get_name(self):
         counts = defaultdict(int)
         rounds = 5000.0
-        test_file = full_path('test/file1.txt')
+        test_file = {'path': full_path('test/file1.txt')}
         for i in range(1, int(rounds)):
             counts[names.get_name(test_file)] += 1
         self.assertAlmostEqual(counts['Test1'] / rounds, 0.333, delta=0.05)
@@ -79,15 +79,15 @@ class NamesTest(unittest.TestCase):
 
     def test_empty_file(self):
         empty_files = {
-            'first:male': full_path('test/empty.txt'),
-            'first:female': full_path('test/empty.txt'),
-            'last': full_path('test/empty.txt'),
+            'first:male': {'path': full_path('test/empty.txt')},
+            'first:female': {'path': full_path('test/empty.txt')},
+            'last': {'path': full_path('test/empty.txt')},
         }
         with patch_file(empty_files):
             self.assertEqual(names.get_first_name(gender='male'), "")
             self.assertEqual(names.get_first_name(gender='female'), "")
             self.assertEqual(names.get_last_name(), "")
-    
+
     def test_only_male_and_female_gender_are_supported(self):
         with self.assertRaises(ValueError):
             names.get_first_name(gender='other')

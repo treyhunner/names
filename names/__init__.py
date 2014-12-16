@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from os.path import abspath, join, dirname
 import random
+from multiprocessing import Pool, cpu_count
 
 
 __title__ = 'names'
@@ -13,20 +14,30 @@ full_path = lambda filename: abspath(join(dirname(__file__), filename))
 
 
 FILES = {
-    'first:male': full_path('dist.male.first'),
-    'first:female': full_path('dist.female.first'),
-    'last': full_path('dist.all.last'),
+    'first:male': {
+        'path': full_path('dist.male.first'),
+    },
+    'first:female': {
+        'path': full_path('dist.female.first'),
+    },
+    'last': {
+        'path': full_path('dist.all.last'),
+    }
 }
 
 
 def get_name(filename):
-    selected = random.random() * 90
-    with open(filename) as name_file:
-        for line in name_file:
-            name, _, cummulative, _ = line.split()
-            if float(cummulative) > selected:
-                return name
-    return ""  # Return empty string if file is empty
+    if 'cache' in filename and len(filename['cache']) > 0:
+        selected = random.randint(0, len(filename['cache']) - 1)
+        return filename['cache'][selected]
+    else:
+        selected = random.random() * 90
+        with open(filename['path']) as name_file:
+            for line in name_file:
+                name, _, cummulative, _ = line.split()
+                if float(cummulative) > selected:
+                    return name
+        return ""  # Return empty string if file is empty
 
 
 def get_first_name(gender=None):
@@ -43,3 +54,21 @@ def get_last_name():
 
 def get_full_name(gender=None):
     return "{0} {1}".format(get_first_name(gender), get_last_name())
+
+
+def cache_file(filename):
+    filename['cache'] = []
+    with open(filename['path']) as name_file:
+        for line in name_file:
+            name, _, _, _ = line.split()
+            filename['cache'].append(name)
+    return ""  # Return empty string if file is empty
+
+
+def get_full_names(gender=None, count=1):
+    for f in FILES.values():
+        cache_file(f)
+
+    random.seed()
+    pool = Pool(cpu_count())
+    return list(pool.imap(get_full_name, [gender] * count))
