@@ -12,6 +12,8 @@ names
 
 Random name generator
 
+NOTE: This package was made to demonstrate how easy it is to create a real thing with Python.  Check out the *Related Projects* section for a list of similar projects.
+
 
 Installation
 ------------
@@ -65,5 +67,12 @@ Data in the following files are public domain (derived from 1990 Census data):
 - dist.female.first
 - dist.male.first
 
+
+Related Projects
+----------------
+
+- `faker`_ is a more mature and full-featured fake data generation package
+
+.. _faker: http://www.joke2k.net/faker/
 .. _mit license: http://th.mit-license.org/2013
 .. _available on PyPI: http://pypi.python.org/pypi/names/
