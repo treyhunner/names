@@ -43,7 +43,7 @@ def get_name(filename):
         # Empty file
         return ""
     while min_index < max_index:
-        index = (min_index + max_index) / 2
+        index = (min_index + max_index) // 2
         name, cummulative = names[index]
         if cummulative < selected:
             min_index = index
