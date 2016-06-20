@@ -66,6 +66,20 @@ class NamesTest(unittest.TestCase):
         self.assertAlmostEqual(counts['Test4'] / rounds, 0.166, delta=0.05)
         self.assertEqual(counts['Test5'] / rounds, 0)
 
+    def test_get_fullname(self):
+        counts = defaultdict(int)
+        rounds = 5000.0
+        name_files = {
+            'first:male': full_path('test/male.txt'),
+            'first:female': full_path('test/female.txt'),
+            'last': full_path('test/last.txt'),
+        }
+        with patch_file(name_files, self.names):
+            for i in range(int(rounds)):
+                counts[self.names.get_full_name()] += 1
+            self.assertAlmostEqual(counts['Male Last'] / rounds, 0.500, delta=0.05)
+            self.assertAlmostEqual(counts['Female Last'] / rounds, 0.500, delta=0.05)
+
     def test_random_gender(self):
         counts = defaultdict(int)
         rounds = 5000.0
@@ -73,6 +87,7 @@ class NamesTest(unittest.TestCase):
             for i in range(int(rounds)):
                 self.names.get_first_name()
                 counts[self.names.get_first_name()] += 1
+
         self.assertAlmostEqual(counts['Male'] / rounds, 0.500, delta=0.05)
         self.assertAlmostEqual(counts['Female'] / rounds, 0.500, delta=0.05)
 
