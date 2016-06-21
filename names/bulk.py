@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from os.path import abspath, join, dirname
 import random
 import sys
+import bisect
 
 
 __title__ = 'names'
@@ -37,25 +38,12 @@ def get_name(filename):
     # Do a binary search to pick a name
     selected = random.random() * 90
     names = load_file(filename)
-    max_index = len(names)
-    min_index = 0
-    if min_index == max_index:
-        # Empty file
+    if len(names) == 0:
         return ""
-    while min_index < max_index:
-        index = (min_index + max_index) // 2
-        name, cummulative = names[index]
-        if cummulative < selected:
-            min_index = index
-        else:
-            max_index = index
-        if max_index == min_index + 1:
-            # Once the min_index and max_index are one apart, we need to look at
-            # them directly
-            if names[min_index][1] > selected:
-                return names[min_index][0]
-            return names[max_index][0]
-    return name
+    index = bisect.bisect([cummulative for name, cummulative in names],
+                          selected)
+    return names[index][0]
+
 
 def get_first_name(gender=None):
     if gender is None:
