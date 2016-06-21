@@ -53,6 +53,37 @@ Here are examples of all current features:
     >>> names.get_last_name()
     'Szczepanek'
 
+Bulk Name Generation
+~~~~~~~~~~~~~~~~~~~~
+If you're generating a large volume of names, the bulk names module will be more
+memory intensive, but faster. To use this module, simply replace:
+
+.. code-block:: pycon
+
+    >>> import names
+
+with
+
+.. code-block:: pycon
+
+    >>> import names.bulk as names
+
+and it will cache all of the names into memory, instead of going to the files
+for each lookup. For example:
+
+.. code-block:: pycon
+
+    >>> import names.bulk as names
+    >>> names.get_full_name()
+    u'Patricia Halford'
+    >>> names.get_full_name(gender='male')
+    u'Patrick Keating'
+    >>> names.get_first_name()
+    'Bernard'
+    >>> names.get_first_name(gender='female')
+    'Christina'
+    >>> names.get_last_name()
+    'Szczepanek'
 
 License
 -------
