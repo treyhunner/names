@@ -43,3 +43,20 @@ def get_last_name():
 
 def get_full_name(gender=None):
     return "{0} {1}".format(get_first_name(gender), get_last_name())
+
+def gender_rank(name, gender, default=0.):
+    first = name.split(" ")[0].upper()
+    with open(FILES['first:%s' % gender]) as name_file:
+        for line in name_file:
+            name, rank, cummulative, _ = line.split()
+            if name == first: return float(rank)
+    return default
+    
+def gender_ranks(name, default=0.):
+    return gender_rank(name, "male", default), gender_rank(name, "female", default)
+    
+def guess_gender(name, male="male", female="female", default=""):
+    m, f = gender_ranks(name)
+    if m > f: return male
+    elif f > m: return female
+    else: return default
