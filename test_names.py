@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from __future__ import unicode_literals
+
 import unittest
 import sys
 from os.path import abspath, join, dirname
@@ -41,9 +43,25 @@ class patch_file:
         names.FILES = self.old_files
 
 test_files = {
-    'first:male': full_path('test/male.txt'),
-    'first:female': full_path('test/female.txt'),
-    'last': full_path('test/last.txt'),
+    'en:first:male': full_path('dist.male.first.en'),
+    'en:first:female': full_path('dist.female.first.en'),
+    'en:last': full_path('dist.all.last.en'),
+    'ua:first:male': full_path('dist.male.first.ua'),
+    'ua:first:female': full_path('dist.female.first.ua'),
+    'ua:last:male': full_path('dist.male.last.ua'),
+    'ua:last:female': full_path('dist.female.last.ua'),
+    'ua-latin:first:male': full_path('dist.male.first.ua-latin'),
+    'ua-latin:first:female': full_path('dist.female.first.ua-latin'),
+    'ua-latin:last:male': full_path('dist.male.last.ua-latin'),
+    'ua-latin:last:female': full_path('dist.female.last.ua-latin'),
+    'ru:first:male': full_path('dist.male.first.ru'),
+    'ru:first:female': full_path('dist.female.first.ru'),
+    'ru:last:male': full_path('dist.male.last.ru'),
+    'ru:last:female': full_path('dist.female.last.ru'),
+    'ru-latin:first:male': full_path('dist.male.first.ru-latin'),
+    'ru-latin:first:female': full_path('dist.female.first.ru-latin'),
+    'ru-latin:last:male': full_path('dist.male.last.ru-latin'),
+    'ru-latin:last:female': full_path('dist.female.last.ru-latin')
 }
 
 
@@ -87,7 +105,7 @@ class NamesTest(unittest.TestCase):
             self.assertEqual(names.get_first_name(gender='male'), "")
             self.assertEqual(names.get_first_name(gender='female'), "")
             self.assertEqual(names.get_last_name(), "")
-    
+
     def test_only_male_and_female_gender_are_supported(self):
         with self.assertRaises(ValueError):
             names.get_first_name(gender='other')
