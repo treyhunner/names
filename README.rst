@@ -5,9 +5,9 @@ names
    :target: http://travis-ci.org/treyhunner/names
 .. image:: https://coveralls.io/repos/treyhunner/names/badge.png?branch=master
    :target: https://coveralls.io/r/treyhunner/names
-.. image:: https://pypip.in/v/names/badge.png
+.. image:: https://img.shields.io/pypi/v/names.svg
    :target: https://crate.io/packages/names
-.. image:: https://pypip.in/d/names/badge.png
+.. image:: https://img.shields.io/pypi/dm/names.svg
    :target: https://crate.io/packages/names
 
 Random name generator
