@@ -19,6 +19,27 @@ FILES = {
 }
 
 
+def parse_line(line):
+    name, weight, _ = line.split(maxsplit=2)
+    return name, float(weight)
+
+
+class Names:
+    def __init__(self):
+        self.names = []
+        self.weights = []
+
+    def load(self, path):
+        with open(path) as f:
+            self.names, self.weights = zip(*parse_line(line) for line in f)
+
+    def get_names(self, k):
+        return random.choices(self.names, weights=self.weights, k=k)
+
+    def get_name(self):
+        return self.get_names(k=1)[0]
+
+
 def get_name(filename):
     selected = random.random() * 90
     with open(filename) as name_file:
