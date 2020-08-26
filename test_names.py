@@ -92,6 +92,30 @@ class NamesTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             names.get_first_name(gender='other')
 
+    def test_reproducibility(self):
+        seed = 123
+        rounds = 5
+        with patch_file(test_files):
+            gen1 = names.Names(seed)
+            gen2 = names.Names(seed)
+            for _ in range(int(rounds)):
+                self.assertEqual(
+                    gen1.get_full_name(),
+                    gen2.get_full_name()
+                )
+                self.assertEqual(
+                    gen1.get_full_name(gender='male'),
+                    gen2.get_full_name(gender='male')
+                )
+                self.assertEqual(
+                    gen1.get_first_name(gender='female'),
+                    gen2.get_first_name(gender='female')
+                )
+                self.assertEqual(
+                    gen1.get_last_name(),
+                    gen2.get_last_name()
+                )
+
 
 class CommandLineTest(unittest.TestCase):
 
