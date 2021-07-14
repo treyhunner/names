@@ -42,4 +42,4 @@ def get_last_name():
 
 
 def get_full_name(gender=None):
-    return "{0} {1}".format(get_first_name(gender), get_last_name())
+    return f"{get_first_name(gender)} {get_last_name(gender)}"
