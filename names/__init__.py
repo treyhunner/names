@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from os.path import abspath, join, dirname
 import random
-
+from typing import Optional
 
 __title__ = 'names'
 __version__ = '0.3.0.post1'
@@ -19,7 +19,7 @@ FILES = {
 }
 
 
-def get_name(filename):
+def get_name(filename) -> str:
     selected = random.random() * 90
     with open(filename) as name_file:
         for line in name_file:
@@ -29,7 +29,7 @@ def get_name(filename):
     return ""  # Return empty string if file is empty
 
 
-def get_first_name(gender=None):
+def get_first_name(gender: Optional[str] = None) -> str:
     if gender is None:
         gender = random.choice(('male', 'female'))
     if gender not in ('male', 'female'):
@@ -37,9 +37,9 @@ def get_first_name(gender=None):
     return get_name(FILES['first:%s' % gender]).capitalize()
 
 
-def get_last_name():
+def get_last_name() -> str:
     return get_name(FILES['last']).capitalize()
 
 
-def get_full_name(gender=None):
+def get_full_name(gender: Optional[str] = None) -> str:
     return "{0} {1}".format(get_first_name(gender), get_last_name())
