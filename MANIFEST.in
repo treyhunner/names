@@ -1,2 +1,6 @@
 include *.rst
-include names/dist.all.last names/dist.female.first names/dist.male.first
+include hebrew_names/dist.jew.last hebrew_names/dist.jew.female.first hebrew_names/dist.jew.male.first
+include hebrew_names/dist.muslim.last hebrew_names/dist.muslim.female.first hebrew_names/dist.muslim.male.first
+include hebrew_names/dist.christian.last hebrew_names/dist.christian.female.first hebrew_names/dist.christian.male.first
+include hebrew_names/dist.druze.last hebrew_names/dist.druze.female.first hebrew_names/dist.druze.male.first
+include hebrew_names/dist.other.last hebrew_names/dist.other.female.first hebrew_names/dist.other.male.first

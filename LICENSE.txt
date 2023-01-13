@@ -1,4 +1,8 @@
+Copyright for portions of project "Hebrew-Names" are held by Trey Hunner, 2013 as part of project "Names".
+All other copyright for project "Hebrew-Names" are held by Aluma Gelbard, 2022.
+
 The MIT License (MIT)
+Copyright © 2022 Aluma Gelbard
 Copyright © 2013 Trey Hunner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

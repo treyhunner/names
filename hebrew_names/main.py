@@ -1,5 +1,4 @@
-from __future__ import print_function
-from names import get_full_name
+from hebrew_names import get_full_name
 
 
 def main():

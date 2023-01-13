@@ -1,5 +1,4 @@
 Authors
 =======
 
-- Trey Hunner <http://treyhunner.com>
-- Simeon Visser <http://simeonvisser.com>
+- Aluma Gelbard <https://github.com/alumag>
